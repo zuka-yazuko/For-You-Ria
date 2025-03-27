@@ -1,0 +1,72 @@
+/* Amplop */
+#envelope {
+    width: 280px;
+    height: 180px;
+    background-color: #f9c5c8;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Love Shape */
+#love {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+    animation: heartbeat 1s infinite;
+    cursor: pointer;
+}
+
+/* Bikin love pakai 2 lingkaran */
+#love::before,
+#love::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+#love::before {
+    top: -25px;
+    left: 0;
+}
+
+#love::after {
+    left: 25px;
+    top: 0;
+}
+
+/* Animasi Heartbeat */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
+
+/* Pesan muncul */
+#message {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
